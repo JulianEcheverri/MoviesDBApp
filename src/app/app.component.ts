@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieServiceService } from './providers/movie-service.service';
+import { MovieService } from './providers/movie-service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,9 @@ import { MovieServiceService } from './providers/movie-service.service';
 export class AppComponent {
   title = 'MoviesDBApp';
 
-  constructor(public moviesv : MovieServiceService){
-    this.moviesv.obtenerPopulares().subscribe(data => console.log(data));
+  constructor(public moviesv : MovieService){
+     
+    // this.moviesv.obtenerPopulares('10751').subscribe(data => console.log(data));
+
   }
 }
