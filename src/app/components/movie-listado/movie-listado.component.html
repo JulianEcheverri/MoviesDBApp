@@ -6,14 +6,7 @@
     <div class="col-12">
         <div class="card-columns">
             <div class="card" *ngFor="let item of listadoDePeliculas">
-                <img [src]="item.poster_path !== '' ? 'https://image.tmdb.org/t/p/w300' + item.poster_path : 'src\assets\default-img.gif'" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <p class="card-text">{{item.original_title}}</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Fecha de lanzamiento: {{item.release_date}}</small>
-                </div>
+                <app-movie [movie]="item"></app-movie>
             </div>
         </div>
     </div>

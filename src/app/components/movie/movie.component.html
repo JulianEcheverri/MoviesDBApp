@@ -1,0 +1,10 @@
+<div class="movieCard" (click)="verDetallesDePelicula(movie.id)">
+    <img [src]="movie.backdrop_path !== null ? 'https://image.tmdb.org/t/p/w300' + movie.backdrop_path : 'assets/default-img.gif'" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">{{movie.original_title}}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Fecha de lanzamiento: {{movie.release_date}}</small>
+    </div>
+</div>

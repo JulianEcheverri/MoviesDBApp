@@ -27,8 +27,9 @@ export class MovieService {
 
   obtenerEnCartelera() {
     let fechaActual = new Date();
-    let otraFecha = new Date(new Date().setDate(fechaActual.getDate() - 10));
+    let otraFecha = new Date(new Date().setDate(fechaActual.getDate() - 5));
     let url = `${this.urlMovieDB}/discover/movie?api_key=${this.apiKey}&language=es&page=1&sort_by=popularity.desc&include_adult=false&include_video=false&primary_release_date.gte=${otraFecha.toISOString().split('T')[0]}&primary_release_date.lte=${fechaActual.toISOString().split('T')[0]}`;
+    // console.log(url);
     return this.obtenerPeliculas(url);
   }
 
@@ -40,6 +41,13 @@ export class MovieService {
   buscarPelicula(texto: string) {
     let url = `${this.urlMovieDB}/search/movie?api_key=${this.apiKey}&language=es&query=${texto}&page=1&include_adult=false`;
     return this.obtenerPeliculas(url);
+  }
+
+  obtenerPelicula(id: string){
+    let url = `${this.urlMovieDB}/movie/${id}?api_key=${this.apiKey}&language=es`;
+    return this.http.get(url).pipe(
+      map((resp: any) => resp)
+    );
   }
 
 }

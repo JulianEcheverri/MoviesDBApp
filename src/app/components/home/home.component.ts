@@ -9,18 +9,19 @@ import { Movie } from 'src/app/models/movie';
 })
 export class HomeComponent implements OnInit {
   moviesPopulares: Movie[];
-  moviesPopularesInfantiles: Movie[] = [];
-  moviesEnCartelera: Movie[] = [];
+  moviesPopularesInfantiles: Movie[];
+  moviesEnCartelera: Movie[];
 
   constructor(private ms: MovieService) {
-    this.ms.obtenerEnCartelera().subscribe((data: any[]) => this.moviesEnCartelera = data);
-    this.ms.obtenerPopulares().subscribe((data: any[]) => this.moviesPopulares = data);
-    this.ms.obtenerPopulares('16').subscribe((data: any[]) => this.moviesPopularesInfantiles = data); //10751  
-    
+    this.ms.obtenerEnCartelera().subscribe((data: any) => {
+      // console.log(data);
+      this.moviesEnCartelera = data
+    });
+    this.ms.obtenerPopulares().subscribe((data: any) => this.moviesPopulares = data);
+    this.ms.obtenerPopulares('16').subscribe((data: any) => this.moviesPopularesInfantiles = data); //10751  
   }
 
   ngOnInit(): void {
     
   }
-
 }
