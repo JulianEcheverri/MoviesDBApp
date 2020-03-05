@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MovieListadoComponent } from './components/movie-listado/movie-listado.component';
 import { MovieDetallesComponent } from './components/movie-detalles/movie-detalles.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieComponent } from './components/movie/movie.component';
     HeaderComponent,
     MovieListadoComponent,
     MovieDetallesComponent,
-    MovieComponent
+    MovieComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class MovieComponent implements OnInit {
   @Input() movie: any;
+  @Input() desdeHome: boolean;
 
   constructor(private router: Router) { }
 

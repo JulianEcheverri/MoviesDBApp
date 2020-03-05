@@ -18,7 +18,7 @@
                 <span class="badge badge-primary">{{movie.vote_average}} </span>
             </h5>
             <hr>
-            <button class="btn btn-outline-danger">Regresar</button>
+            <button class="btn btn-outline-danger" [routerLink]="desdeHome ? ['/home'] : ['/busqueda']">Regresar</button>
         </div>
     </div>
 </div>

@@ -49,7 +49,6 @@ export class MovieService {
       map((resp: any) => resp)
     );
   }
-
 }
 
 // {

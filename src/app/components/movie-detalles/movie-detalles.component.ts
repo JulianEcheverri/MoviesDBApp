@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../providers/movie-service';
 
@@ -9,6 +9,7 @@ import { MovieService } from '../../providers/movie-service';
 })
 export class MovieDetallesComponent implements OnInit {
   movie: any = {};
+  desdeHome: boolean;
 
   constructor(private activatedRoute: ActivatedRoute, private ms: MovieService) {
     this.activatedRoute.params.subscribe(params => {     
