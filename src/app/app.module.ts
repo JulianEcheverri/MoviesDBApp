@@ -11,7 +11,8 @@ import { MovieListadoComponent } from './components/movie-listado/movie-listado.
 import { MovieDetallesComponent } from './components/movie-detalles/movie-detalles.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
-
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { FormsModule } from '@angular/forms'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +22,14 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     MovieListadoComponent,
     MovieDetallesComponent,
     MovieComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    PeliculaImagenPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

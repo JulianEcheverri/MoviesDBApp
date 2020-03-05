@@ -2,7 +2,7 @@
     <h1 class="card-title">{{movie.title}}</h1>
     <div class="row col-12">
         <div class="col-md-6">
-            <img [src]="movie.poster_path !== null ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'assets/default-img.gif'" class="card-img-top" alt="...">
+            <img [src]="movie | peliculaImagen" class="card-img-top" alt="...">
         </div>
         <div class="col-md-6">
             <h4>Sinopsis</h4>

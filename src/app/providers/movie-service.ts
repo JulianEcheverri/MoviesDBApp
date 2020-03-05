@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Movie } from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,14 @@ export class MovieService {
   // api request
   private urlMovieDB: string = "https://api.themoviedb.org/3"
 
+  // variable que guardara las peliculas en el momento de la busqueda
+  movies: Movie[];
+
   constructor(private http: HttpClient) { }
 
   obtenerPeliculas(url: string) {
-    return this.http.get(url).pipe(
+    return this.http.get(url)
+    .pipe(
       map((resp: any) => resp.results)
     );
   }
@@ -40,12 +45,18 @@ export class MovieService {
 
   buscarPelicula(texto: string) {
     let url = `${this.urlMovieDB}/search/movie?api_key=${this.apiKey}&language=es&query=${texto}&page=1&include_adult=false`;
-    return this.obtenerPeliculas(url);
+    return this.http.get(url).pipe(
+      map((resp: any) => {
+        this.movies = resp.results;
+        return resp.results;
+      })
+    );
   }
 
   obtenerPelicula(id: string){
     let url = `${this.urlMovieDB}/movie/${id}?api_key=${this.apiKey}&language=es`;
-    return this.http.get(url).pipe(
+    return this.http.get(url)
+    .pipe(
       map((resp: any) => resp)
     );
   }

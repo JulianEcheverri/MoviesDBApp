@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private ms: MovieService) {
     this.ms.obtenerEnCartelera().subscribe((data: any) => {
-      // console.log(data);
+       console.log(data);
       this.moviesEnCartelera = data
     });
     this.ms.obtenerPopulares().subscribe((data: any) => this.moviesPopulares = data);

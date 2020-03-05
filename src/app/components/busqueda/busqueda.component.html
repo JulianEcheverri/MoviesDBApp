@@ -1,0 +1,19 @@
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Buscar: </label>
+                <input type="text" placeholder="Buscar una pelicula" name="buscar" [(ngModel)]="buscar" (keyup.enter)="buscarPelicula()" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="mb-5">
+        <div class="col-12">
+            <div class="card-columns">
+                <div class="card" *ngFor="let item of ms.movies">
+                    <app-movie [movie]="item"></app-movie>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../../providers/movie-service';
 
 @Component({
   selector: 'app-busqueda',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./busqueda.component.css']
 })
 export class BusquedaComponent implements OnInit {
+  buscar: string = "";
 
-  constructor() { }
+  constructor(public ms: MovieService) { }
 
   ngOnInit(): void {
   }
+
+  buscarPelicula(){
+    if (this.buscar.length == 0) return;
+    this.ms.buscarPelicula(this.buscar).subscribe();
+  }
+
 
 }
