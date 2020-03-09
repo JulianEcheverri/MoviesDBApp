@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card-columns">
                 <div class="card" *ngFor="let item of ms.movies">
-                    <app-movie [movie]="item"></app-movie>
+                    <app-movie [movie]="item" [componentePadre]="this" [busqueda]="buscar"></app-movie>
                 </div>
             </div>
         </div>

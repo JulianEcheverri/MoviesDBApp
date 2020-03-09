@@ -8,8 +8,10 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'movie-listado', component: MovieListadoComponent },
-  { path: 'movie-detalles/:id', component: MovieDetallesComponent },
+  { path: 'movie-detalles/:id/:desdelistado', component: MovieDetallesComponent },
+  { path: 'movie-detalles/:id/:desdelistado/:busqueda', component: MovieDetallesComponent },
   { path: 'busqueda', component: BusquedaComponent },
+  { path: 'busqueda/:texto', component: BusquedaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

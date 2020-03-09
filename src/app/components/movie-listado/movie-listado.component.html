@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="card-columns">
             <div class="card" *ngFor="let item of listadoDePeliculas">
-                <app-movie [movie]="item"></app-movie>
+                <app-movie [movie]="item" [componentePadre]="this"></app-movie>
             </div>
         </div>
     </div>

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class MovieComponent implements OnInit {
   @Input() movie: any;
+  @Input() componentePadre: any;
+  @Input() busqueda: string = '';
   
   constructor(private router: Router) { }
 
@@ -14,7 +16,6 @@ export class MovieComponent implements OnInit {
   }
 
   verDetallesDePelicula(id: string){
-    this.router.navigate(['/movie-detalles', id]);
+    this.router.navigate(['/movie-detalles', id, this.componentePadre.constructor.name == 'MovieListadoComponent', this.busqueda]);
   }
-
 }

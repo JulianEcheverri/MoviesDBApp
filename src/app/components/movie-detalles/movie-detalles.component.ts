@@ -9,15 +9,18 @@ import { MovieService } from '../../providers/movie-service';
 })
 export class MovieDetallesComponent implements OnInit {
   movie: any = {};
-  desdeHome: boolean;
+  desdeListado: any;
+  busqueda: any;
 
   constructor(private activatedRoute: ActivatedRoute, private ms: MovieService) {
     this.activatedRoute.params.subscribe(params => {     
       this.ms.obtenerPelicula(params.id).subscribe(data => {
         this.movie = data
-        // console.log(params.id);
-        console.log(this.movie);
+        //console.log(this.movie);
       });
+      console.log(params);
+      this.desdeListado = params['desdelistado'];
+      this.busqueda = params['busqueda'];
     });
    }
 
